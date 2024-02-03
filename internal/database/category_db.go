@@ -36,3 +36,25 @@ func (cd *CategoryDB) GetCategories() ([]*entity.Category, error) {
 
 	return categories, nil
 }
+
+// method to get category
+func (cd *CategoryDB) GetCategory(id string) (*entity.Category, error) {
+	var category entity.Category
+	err := cd.db.QueryRow("SELECT id, name FROM categories WHERE id = ?", id).Scan(&category.ID, &category.Name)
+	if err != nil {
+		return nil, err
+	}
+
+	return &category, nil
+}
+
+// new category
+func (cd *CategoryDB) CreateCategory(category *entity.Category) (string, error) {
+	_, err := cd.db.Exec("INSET INTO cetegories (id, name) VALUES (?, ?)", category.ID, category.Name)
+
+	if err != nil {
+		return "", err
+	}
+
+	return category.ID, nil
+}
