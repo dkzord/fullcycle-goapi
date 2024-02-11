@@ -33,7 +33,7 @@ func main() {
 	c.Use(middleware.Logger)
 	c.Use(middleware.Recoverer)
 	c.Get("/category/{id}", webCategoryHandler.GetCategory)
-	c.Get("/categories", webCategoryHandler.GetCategories)
+	c.Get("/category", webCategoryHandler.GetCategories)
 	c.Post("/category", webCategoryHandler.CreateCategory)
 
 	c.Get("/product/{id}", webProductHandler.GetProduct)
