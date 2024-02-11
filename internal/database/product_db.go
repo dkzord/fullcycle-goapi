@@ -26,7 +26,7 @@ func (pd *ProductDB) GetProducts() ([]*entity.Product, error) {
 	var products []*entity.Product
 	for rows.Next() {
 		var product entity.Product
-		if err := rows.Scan(&product.ID, &product.Name, product.Description, &product.Price, &product.CategoryID); err != nil {
+		if err := rows.Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.CategoryID, &product.ImageURL); err != nil {
 			return nil, err
 		}
 
@@ -58,7 +58,7 @@ func (pd *ProductDB) GetProductByCategory(categoryID string) ([]*entity.Product,
 	var products []*entity.Product
 	for rows.Next() {
 		var product entity.Product
-		if err := rows.Scan(&product.ID, &product.Name, product.Description, &product.Price, &product.CategoryID, &product.ImageURL); err != nil {
+		if err := rows.Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.CategoryID, &product.ImageURL); err != nil {
 			return nil, err
 		}
 
