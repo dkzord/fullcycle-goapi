@@ -30,6 +30,9 @@ This project was carried out solely as a means of Golang studies. Consists of a 
 # 📁 How to run the project
 
 ```bash
+    #Upload the docker application
+    $ docker-compose up -d
+
     #Enter the root folder
     $ cd cmd/catalog
 
