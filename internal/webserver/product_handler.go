@@ -46,7 +46,7 @@ func (wph *WebProductHandler) GetProduct(w http.ResponseWriter, r *http.Request)
 	json.NewEncoder(w).Encode(product)
 }
 
-func (wph *WebProductHandler) GetProductByCategory(w http.ResponseWriter, r *http.Request) {
+func (wph *WebProductHandler) GetProductByCategoryID(w http.ResponseWriter, r *http.Request) {
 	categoryID := chi.URLParam(r, "categoryID")
 
 	if categoryID == "" {
