@@ -4,6 +4,8 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`id`)
 );
 
+
+
 CREATE TABLE `products` (
   `id` varchar(36) NOT NULL,
   `name` varchar(255) NOT NULL,
